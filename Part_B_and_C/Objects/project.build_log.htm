@@ -1,0 +1,235 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Zachary Richatds, UCSB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Zach\Downloads\Template_Project (1)\Template_Project\Part_B_and_C\project.uvprojx
+Project File Date:  06/09/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+src/SysTimer.c(71): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+1 warning generated.
+compiling SysTimer.c...
+compiling DMA.c...
+compiling SysClock.c...
+assembling startup_stm32l476xx.s...
+src/main.c(27): warning: no previous extern declaration for non-static variable 'disableTempControlFor3Seconds' [-Wmissing-variable-declarations]
+bool disableTempControlFor3Seconds = false;
+     ^
+src/main.c(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+bool disableTempControlFor3Seconds = false;
+^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+src/main.c(28): warning: no previous extern declaration for non-static variable 'doorIsOpened' [-Wmissing-variable-declarations]
+bool doorIsOpened = false;
+     ^
+src/main.c(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+bool doorIsOpened = false;
+^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+src/main.c(29): warning: no previous extern declaration for non-static variable 'threeSeocondCount' [-Wmissing-variable-declarations]
+int threeSeocondCount = 0;
+    ^
+src/main.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int threeSeocondCount = 0;
+^
+src/main.c(119): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                SlaveAddress = 0b1001000 << 1; // TMP102 Address: 1001000
+                               ^
+src/main.c(125): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+                int temperature = (Data_Receive & 0x7F) - (((Data_Receive & 0x80) != 0) ? 128 : 0);
+                    ^
+src/main.c(94): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        double x,y,z;
+               ^
+src/main.c(105): warning: unused variable 'accelOpened' [-Wunused-variable]
+        bool accelOpened = false;
+             ^
+7 warnings generated.
+compiling main.c...
+src/SPI.c(94): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        return SPI1->DR; // DONE
+        ~~~~~~ ~~~~~~^~
+1 warning generated.
+compiling SPI.c...
+compiling LED.c...
+src/I2C.c(51): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        int count = 0;
+            ^
+src/I2C.c(40): warning: unused variable 'OwnAddr' [-Wunused-variable]
+        uint32_t OwnAddr = 0x52;
+                 ^
+2 warnings generated.
+compiling I2C.c...
+src/UART.c(48): warning: passing 'volatile DMA_Channel_TypeDef *' to parameter of type 'DMA_Channel_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        DMA_Init_UARTx(tx, USART2);
+                       ^~
+src/DMA.h(14): note: passing argument to parameter 'tx' here
+void DMA_Init_UARTx(DMA_Channel_TypeDef * tx, USART_TypeDef * uart);
+                                          ^
+src/UART.c(141): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+                uint8_t test = (tx->CCR & DMA_CCR_EN);
+                        ^
+src/UART.c(141): warning: unused variable 'test' [-Wunused-variable]
+src/UART.c(173): warning: passing 'volatile char[256]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        UART_onInput(inputs, input_size);
+                     ^~~~~~
+src/UART.h(28): note: passing argument to parameter 'inputs' here
+void UART_onInput(char* inputs, uint32_t size);
+                        ^
+src/UART.c(183): warning: initializing 'uint8_t *' (aka 'unsigned char *') with an expression of type 'volatile uint8_t *' (aka 'volatile unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        uint8_t *temp = active;
+                 ^      ~~~~~~
+src/UART.c(186): warning: passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        UART_print(active);
+                   ^~~~~~
+src/UART.c(128): note: passing argument to parameter 'data' here
+void UART_print(char* data) {
+                      ^
+src/UART.c(206): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+                        char ch = USART2->RDR;
+                             ~~   ~~~~~~~~^~~
+src/UART.c(206): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+                        char ch = USART2->RDR;
+                             ^
+8 warnings generated.
+compiling UART.c...
+src/motor.c(8): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                     ^
+src/motor.c(8): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                             ^
+src/motor.c(8): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                     ^
+src/motor.c(8): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                             ^
+src/motor.c(8): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                                     ^
+src/motor.c(8): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                                             ^
+src/motor.c(8): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                                                     ^
+src/motor.c(8): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                                                             ^
+src/motor.c(45): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                if(0b0001 & HalfStep[step])
+                   ^
+src/motor.c(48): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                if(0b0010 & HalfStep[step])
+                   ^
+src/motor.c(51): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                if(0b0100 & HalfStep[step])
+                   ^
+src/motor.c(54): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                if(0b1000 & HalfStep[step])
+                   ^
+src/motor.c(43): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+                uint32_t outputData = 0;
+                         ^
+13 warnings generated.
+compiling motor.c...
+src/accelerometer.c(14): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                bitstring |= (addr << 8) | (1UL << 15); 
+                              ~~~~~^~~~  ~
+src/accelerometer.c(15): warning: implicit conversion loses integer precision: 'uint16_t' (aka 'unsigned short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                return SPI_Transfer_Data(bitstring);
+                ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/accelerometer.c(28): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+        return two_compliment_val;
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~
+src/accelerometer.c(30): warning: implicit conversion changes signedness: 'int' to 'int16_t' (aka 'short') [-Wsign-conversion]
+        return -(~two_compliment_val + 1);
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/accelerometer.c(23): warning: no previous prototype for function 'twosCompToDec' [-Wmissing-prototypes]
+int16_t twosCompToDec(uint16_t two_compliment_val)
+        ^
+src/accelerometer.c(23): note: declare 'static' if the function is not intended to be used outside of this translation unit
+int16_t twosCompToDec(uint16_t two_compliment_val)
+^
+static 
+src/accelerometer.c(39): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    int16_t rawX = (accRead(0x33)<<8)|accRead(0x32);  
+            ~~~~   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+src/accelerometer.c(40): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    int16_t rawY = (accRead(0x35)<<8)|accRead(0x34);
+            ~~~~   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+src/accelerometer.c(41): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    int16_t rawZ = (accRead(0x37)<<8)|accRead(0x36);
+            ~~~~   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+src/accelerometer.c(44): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+    *x = twosCompToDec(rawX)/31.2;
+         ~~~~~~~~~~~~~ ^~~~
+src/accelerometer.c(45): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+    *y = twosCompToDec(rawY)/31.2;
+         ~~~~~~~~~~~~~ ^~~~
+src/accelerometer.c(46): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+    *z = twosCompToDec(rawZ)/31.2;
+         ~~~~~~~~~~~~~ ^~~~
+src/accelerometer.c(35): warning: unused variable 'receivedData' [-Wunused-variable]
+                uint16_t receivedData = accRead(0x32);
+                         ^
+12 warnings generated.
+compiling accelerometer.c...
+linking...
+Program Size: Code=14152 RO-data=1212 RW-data=8 ZI-data=2688  
+FromELF: creating hex file...
+".\Objects\project.axf" - 0 Error(s), 44 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32L4xx_DFP.2.6.1.pack
+                Keil.STM32L4xx_DFP.2.6.1
+                STMicroelectronics STM32L4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/Zach/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Zach/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.6.1/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>

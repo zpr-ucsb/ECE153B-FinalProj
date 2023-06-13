@@ -1,0 +1,180 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Zachary Richatds, UCSB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Zach\OneDrive\Desktop\Template_Project\Part_A\project.uvprojx
+Project File Date:  06/08/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+src/UART.c(133): warning: comparison of integers of different signs: 'int' and 'uint32_t' (aka 'unsigned int') [-Wsign-compare]
+        for (i = 0; i < nBytes; i++) {
+                    ~ ^ ~~~~~~
+src/UART.c(146): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+2 warnings generated.
+compiling UART.c...
+compiling SysClock.c...
+assembling startup_stm32l476xx.s...
+compiling SysTimer.c...
+src/main.c(19): warning: no previous prototype for function 'Init_USARTx' [-Wmissing-prototypes]
+void Init_USARTx(int x) {
+     ^
+src/main.c(19): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Init_USARTx(int x) {
+^
+static 
+1 warning generated.
+compiling main.c...
+src/UART_printf.c(14): warning: unused parameter 'f' [-Wunused-parameter]
+int fputc(int ch, FILE *f) { 
+                        ^
+src/UART_printf.c(23): warning: unused parameter 'f' [-Wunused-parameter]
+int fgetc(FILE *f) {  
+                ^
+2 warnings generated.
+compiling UART_printf.c...
+src/motor.c(10): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                     ^
+src/motor.c(10): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                             ^
+src/motor.c(10): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                     ^
+src/motor.c(10): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                             ^
+src/motor.c(10): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                                     ^
+src/motor.c(10): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                                             ^
+src/motor.c(10): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                                                     ^
+src/motor.c(10): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+static const uint32_t HalfStep[8] = {0b0001, 0b0011, 0b0010, 0b0110, 0b0100, 0b1100, 0b1000, 0b1001};
+                                                                                             ^
+src/motor.c(20): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->MODER &= ~(1<<11); //5
+                     ~~ ^~~~~~~~
+src/motor.c(21): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->MODER &= ~(1<<13); //6
+                     ~~ ^~~~~~~~
+src/motor.c(22): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->MODER &= ~(1<<17); //8
+                     ~~ ^~~~~~~~
+src/motor.c(23): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->MODER &= ~(1<<19); //9
+                     ~~ ^~~~~~~~
+src/motor.c(31): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->OSPEEDR &= (~(1<<10));
+                       ~~  ^~~~~~~~
+src/motor.c(32): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->OSPEEDR &= (~(1<<12));
+                       ~~  ^~~~~~~~
+src/motor.c(33): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->OSPEEDR &= (~(1<<16));
+                       ~~  ^~~~~~~~
+src/motor.c(34): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->OSPEEDR &= (~(1<<18));
+                       ~~  ^~~~~~~~
+src/motor.c(37): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->OTYPER &= (~(1<<5));
+                      ~~  ^~~~~~~
+src/motor.c(38): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->OTYPER &= (~(1<<6));
+                      ~~  ^~~~~~~
+src/motor.c(39): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->OTYPER &= (~(1<<8));
+                      ~~  ^~~~~~~
+src/motor.c(40): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->OTYPER &= (~(1<<9));
+                      ~~  ^~~~~~~
+src/motor.c(43): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->PUPDR &= ~((1<<11)+(1<<10));
+                     ~~ ^~~~~~~~~~~~~~~~~~
+src/motor.c(44): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->PUPDR &= ~((1<<13)+(1<<12));
+                     ~~ ^~~~~~~~~~~~~~~~~~
+src/motor.c(45): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->PUPDR &= ~((1<<17)+(1<<16));
+                     ~~ ^~~~~~~~~~~~~~~~~~
+src/motor.c(46): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->PUPDR &= ~((1<<19)+(1<<18));
+                     ~~ ^~~~~~~~~~~~~~~~~~
+src/motor.c(93): warning: no previous prototype for function 'TIM3_IRQHandler' [-Wmissing-prototypes]
+void TIM3_IRQHandler(void)
+     ^
+src/motor.c(93): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void TIM3_IRQHandler(void)
+^
+static 
+src/motor.c(118): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                if(0b0001 & HalfStep[step])
+                   ^
+src/motor.c(121): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                if(0b0010 & HalfStep[step])
+                   ^
+src/motor.c(124): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                if(0b0100 & HalfStep[step])
+                   ^
+src/motor.c(127): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                if(0b1000 & HalfStep[step])
+                   ^
+29 warnings generated.
+compiling motor.c...
+linking...
+Program Size: Code=17200 RO-data=1124 RW-data=0 ZI-data=1816  
+FromELF: creating hex file...
+".\Objects\project.axf" - 0 Error(s), 34 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32L4xx_DFP.2.6.1.pack
+                Keil.STM32L4xx_DFP.2.6.1
+                STMicroelectronics STM32L4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/Zach/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Zach/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.6.1/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
